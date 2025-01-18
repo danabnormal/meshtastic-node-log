@@ -54,12 +54,12 @@ meshtastic_node_log.sh <node_ip_address> <output_file> [--force_update]
   1.  Backup node information:
 
 ```bash
-meshtastic_node_log.sh 192.168.1.100 all_node_info_backup.json
+meshtastic_node_log.sh 192.168.1.100 log.json
 ```
   2.  Force a new history entry:
 
 ```bash
-meshtastic_node_log.sh 192.168.1.100 all_node_info_backup.json --force_update
+meshtastic_node_log.sh 192.168.1.100 log.json --force_update
 ```
 > **_NOTE:_**  This script is intended to be used with a single JSON file so node history is collated in a single place.
 ---
