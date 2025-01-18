@@ -4,6 +4,7 @@ import meshtastic.tcp_interface
 import json
 from datetime import datetime
 import os
+import argparse
 
 
 def has_data_changed(existing_data, new_data):
@@ -128,13 +129,19 @@ def backup_all_meshtastic_node_info(ip_address, output_file, force_update=False)
         # Ensure the connection is closed
         interface.close()
 
+def main():
+    # Argument parser setup
+    parser = argparse.ArgumentParser(description="Backup all Meshtastic node information to a JSON file.")
+    parser.add_argument("ip_address", type=str, help="IP address of the Meshtastic node")
+    parser.add_argument("output_file", type=str, help="Path to the output JSON file")
+    parser.add_argument(
+        "--force_update", action="store_true",
+        help="Force a new history entry even if no data has changed"
+    )
+    args = parser.parse_args()
 
-# Replace with your node's IP address and desired output file
-ip_address = "192.168.5.231"  # Replace with your Meshtastic node's IP address
-output_file = "all_node_info_backup.json"
+    # Call the backup function with parsed arguments
+    backup_all_meshtastic_node_info(args.ip_address, args.output_file, force_update=args.force_update)
 
-# Backup all node information with no forced update
-backup_all_meshtastic_node_info(ip_address, output_file, force_update=False)
-
-# If you want to force an update regardless of changes, set force_update=True
-# backup_all_meshtastic_node_info(ip_address, output_file, force_update=True)
+if __name__ == "__main__":
+    main()
