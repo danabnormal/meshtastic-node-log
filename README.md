@@ -10,6 +10,7 @@ This script connects to a Meshtastic node over IP, retrieves information about a
 ---
 
 ## Requirements
+This script has only been tested in openSUSE Tumbleweed 20250108.
 
 ### Prerequisites
 
@@ -60,7 +61,7 @@ meshtastic_node_log.sh 192.168.1.100 all_node_info_backup.json
 ```bash
 meshtastic_node_log.sh 192.168.1.100 all_node_info_backup.json --force_update
 ```
-
+> **_NOTE:_**  This script is intended to be used with a single JSON file so node history is collated in a single place.
 ---
 ## JSON Output Format
 
@@ -126,6 +127,11 @@ The script generates a JSON file with the following structure:
 - Ensure the Meshtastic node is reachable on the specified IP address before running the script.
 - The JSON file will be updated with any new or changed data, preserving historical entries.
 - Use the `--force_update` flag if you want to add a history entry even when data hasn't changed.
+
+---
+## ToDo
+- Bluetooth connectivity
+- Serial connectivity
 
 ---
 ## License
