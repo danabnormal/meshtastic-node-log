@@ -1,4 +1,4 @@
-# Meshtastic Node Info Backup Script
+# Meshtastic Node Log
 
 This script connects to a Meshtastic node over IP, retrieves information about all seen nodes, and stores this data in a JSON file. It keeps a history of changes for each node, ensuring that updates are logged only when the data changes.
 
@@ -24,8 +24,8 @@ A setup script is provided that sets up a suitable virtual environment and insta
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/username/my-python-tool.git
-   cd my-python-tool
+   git clone https://github.com/danabnormal/meshtastic-node-log.git
+   cd meshtastic-node-log
 2. Run the setup script to configure the virtual environment and install dependencies:
    ```bash
    ./setup.sh
@@ -38,7 +38,7 @@ A setup script is provided that sets up a suitable virtual environment and insta
 Run the script from the command line using the following syntax:
 
 ```bash
-python script_name.py <node_ip_address> <output_file> [--force_update]
+meshtastic_node_log.sh <node_ip_address> <output_file> [--force_update]
 ```
 
 ### Arguments
