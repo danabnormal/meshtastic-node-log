@@ -1,3 +1,2 @@
-myenv/
+*env/
 *.json
-meshtastic_node_log_env/
